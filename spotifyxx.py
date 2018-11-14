@@ -24,8 +24,8 @@ def auth(user):
         #if auth fails ... may be due to out-dated cache
         print("Could not obtain token for , " + user)
         print("Clearing Cache, please run again")
-        #clear cache, exit gracefully
-        #os.remove(f".cache-{user}")
+        #clear cache, exit gracefully, bellas environment will not run this cache
+        os.remove(f".cache-{user}")
         sys.exit(0)
 
 def getTracks(token):
@@ -49,7 +49,9 @@ def getTracks(token):
 
 def printTracks(songs):
     for song in songs:
-        print(song['name']+ ' - ' + song['artists'][0]['name']).encode("utf-8")
+        print(song['name']+ ' - ' + song['artists'][0]['name'])
+        #if you get a utf error insert .encode("utf-8") like so:
+        #print(song['name']+ ' - ' + song['artists'][0]['name']).encode("utf-8")
 
 
 username = sys.argv[1]
