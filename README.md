@@ -6,6 +6,10 @@ Enter python file name followed by two usernames:
 
         python spotifyxx.py user1 user2
         
+A web browser will pop up and propmt for a user to login. Log in with user1 credentials.
+Then it will automatically open another tab and logout user1.
+A web browser will pop up and propmt for a user to login. Log in with user2 credentials.
+
 ## How to find your username
 ### Via Spotify.com
   If you do not know what your Spotify username is, log in to https://www.spotify.com/us/ 
@@ -16,13 +20,13 @@ Enter python file name followed by two usernames:
 
   2. Click on your name on the upper right corner of the screen
   
-  3. A screeen with your name and bunch of playlist will show up. Click on the circle with the three dots in them. (...) 
+  3. A screen with your name and bunch of playlist will show up. Click on the circle with the three dots in them. (...) 
   
   4. Click on "copy profile link" 
 
   5. Open up a browser and paste it into the search bar
 
-  6. The number that shows at the end of the url is your Username
+  6. The number that shows at the end of the url is your username
 
 ## Enviroment dependent errors
 If html print error occurs, use commented line of code at 70 comment out line 68 like so:
