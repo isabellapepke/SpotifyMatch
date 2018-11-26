@@ -6,7 +6,7 @@ Enter python file name followed by two usernames:
 
         python spotifyxx.py user1 user2
         
-## Unsure about username
+## How to find your username
 ### Via Spotify.com
 If you do not know what your Spotify username is, log in to https://www.spotify.com/us/ 
 In the account overview, https://www.spotify.com/us/account/overview/, it will show your username. 
