@@ -33,7 +33,7 @@ A web browser will pop up and prompt for a user to login. Log in with user2 cred
 ## Enviroment dependent errors
 If the page says "This site can't be reached" when you authenticate your account, ignore that and copy the url anyways. 
 Here is what it might look like
-![alt text](C:\Users\pepke101\Downloads\localhost_error.jpg)
+![photo](https://github.com/isabellapepke/SpotifyMatch/blob/master/localhost_error.png)
 
 #### Previous code errors that have been fixed:
 
