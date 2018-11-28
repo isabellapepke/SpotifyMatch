@@ -31,6 +31,12 @@ A web browser will pop up and prompt for a user to login. Log in with user2 cred
   6. The number that shows at the end of the url is your username
 
 ## Enviroment dependent errors
+If the page says "This site can't be reached" when you authenticate your account, ignore that and copy the url anyways. 
+Here is what it might look like
+![alt text](C:\Users\pepke101\Downloads\localhost_error.jpg)
+
+#### Previous code errors that have been fixed:
+
 If html print error occurs, use commented line of code at 70 comment out line 68 like so:
         
         #print(song['name']+ ' - ' + song['artists'][0]['name'])
