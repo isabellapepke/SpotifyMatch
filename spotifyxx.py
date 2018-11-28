@@ -53,7 +53,7 @@ def auth(user):
 def getTracks(token):
     "Function returns list containing song library"
 
-    sp = spotipy.Spotify(auth=token)#create Spotify object
+    sp = spotipy.Spotify(auth=token) #create Spotify object
     songs = []
     offset = 0 #this variable determines index in song library at which to begin song fetch
 
@@ -90,7 +90,7 @@ def printTracks(songs):
 def printCommonTracks(user_one_song_list, user_two_song_list):
     "Function prints tracks that are in common between two users"
 
-    print("\n\n\n\nNow printing common songs...\n\n*************--------------------*************")
+    print("\n\n\n\nNow printing common songs...\n\n**************--------------------*************")
     for user_one_track in user_one_song_list:
          for user_two_track in user_two_song_list:
              try:
@@ -104,7 +104,7 @@ def printCommonTracks(user_one_song_list, user_two_song_list):
 def logoutUser():
     "Function logs out a user"
 
-    print("Now logging you out...")
+    print("\n\nNow logging you out...\n\n")
     wait(5)
     webbrowser.open("http://www.spotify.com/logout")
     wait(10)
@@ -117,10 +117,10 @@ songs1 = []
 songs2 = []
 username1 = ""
 username2 = ""
-if sys.argv[1] != "":
+if len(sys.argv) > 1:
     username1 = sys.argv[1]
 else:
-    print("Error you did not enter a first username. Try again.")
+    print("\nError you did not enter a first username. Make sure to use two usernames when you run our code.")
     sys.exit(0)
 token1 = auth(username1)
 songs1 = getTracks(token1)
@@ -128,10 +128,10 @@ printTracks(songs1)
 wait(5)
 logoutUser()
 
-if sys.argv[2] != "":
+if len(sys.argv) > 2:
     username1 = sys.argv[2]
 else:
-    print("Error you did not enter a second username. Try again.")
+    print("\nError you did not enter a second username. Make sure to use two usernames when you run our code.")
     sys.exit(0)
 token2 = auth(username2)
 songs2 = getTracks(token2)
