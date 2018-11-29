@@ -22,9 +22,9 @@ A web browser will pop up and prompt for a user to login. Log in with user2 cred
 
   2. Click on your name on the upper right corner of the screen
   
-  3. A screen with your name and bunch of playlist will show up. Click on the circle with the three dots in them. (...) 
+  3. A screen with your name and playlists will show up. At the top, click on the circle with the three dots in them. (...) 
   
-  4. Click on "copy profile link" 
+  4. Click on: Share >> "copy profile link" 
 
   5. Open up a browser and paste it into the search bar
 
