@@ -39,4 +39,4 @@ class Comparer:
             if song in self.playlist2.songs:
                 continue
             missingSongs.add(song)
-        return missingSongs 
+        return missingSongs
