@@ -6,5 +6,4 @@
     * Wrote and implemented Song, Playlist, and Statistics classes
 **Currently Working On**
 
-    * Creating Song and Playlist classes to more easily compare two profiles for similarity 
-    * Implementing comparison algorithms in a Comparer Clas
+    *Implementing Statistics Class
