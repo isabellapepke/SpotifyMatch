@@ -117,16 +117,12 @@ username2 = ""
 username1 = sys.argv[1]
 token1 = auth(username1)
 songs1 = makePlaylist(token1, username1)
-print("########### Songs in Playlist 1 ##############")
-print(songs1)
 logoutUser()
 
 
 username2 = sys.argv[2]
 token2 = auth(username2)
 songs2 = makePlaylist(token2, username2)
-print("########### Songs in Playlist 2 ##############")
-print(songs2)
 logoutUser()
 
 comparer = Comparer(songs1, songs2)
@@ -143,13 +139,13 @@ if(comparer.similarity == 1):
 
 elif (comparer.isSimilar(0.5)):
     print(f"The two profiles are very similar, {username1}, you might like these songs from {username2}'s library:")
-    wait(5)
+    wait(3)
     print("\n")
     print(comparer.getMissingSongs(0))
     print("\n")
     print(f"{username2}, you might like these songs from {username1}'s library:")
     print("\n")
-    wait(5)
+    wait(3)
     print(comparer.getMissingSongs(1))
 
 else:
