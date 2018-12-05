@@ -1,4 +1,5 @@
 class Song:
+    """Class holds a song title and list of artists, it is equipped with equality overloads and __str__ method"""
     #class constructor
     def __init__(self, title, musicians):
         self.title = title

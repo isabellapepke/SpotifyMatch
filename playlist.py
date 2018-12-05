@@ -1,15 +1,17 @@
 import song
 class Playlist:
-    """List of class variables:
-        userId = Spotify userId of playlist -- dec in function __init__
-        songs = List of songs in playlist -- dec in function __init__
+    """Class holds a username and a library of songs. It is equipped with a __str__ method and 
+       equality operator oveloads
+        List of class variables:
+            userId = Spotify userId of playlist -- dec in function __init__
+            songs = List of songs in playlist -- dec in function __init__
      """
-    #class constructor
+
     def __init__(self, userId = "none", songs = []):
         self.userId = userId 
         self.songs = songs
-    
-    #str() method
+
+    # str() method
     def __str__(self):
         string = ""
         for song in self.songs:
@@ -27,8 +29,8 @@ class Playlist:
     def __neq__(self,other):
         return not (self == other)
 
-    #adds parameter to playlist
     def add (self, song):
+        """adds parameter to playlist"""
         self.songs.append(song)
 
     def has(self, song):

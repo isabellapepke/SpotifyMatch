@@ -96,35 +96,39 @@ def logoutUser():
     wait(5)
 
 
+
+
+
 ###########----Main----############
 
-#Check for valid amount of command line arugments
+# Check for valid amount of command line arugments
 if len(sys.argv) < 2:
     print("You must provide 2 Spotify Usernames as command-line arguments")
     print("Now exiting program")
     sys.exit()
 
 
-#when program starts logout any users, allow time for page to load
+# when program starts logout any users, allow time for page to load
 webbrowser.open("http://www.spotify.com/logout")
 wait(5)
 
-songs1 = []
-songs2 = []
 username1 = ""
 username2 = ""
 
+# Create playlist object for first profile
 username1 = sys.argv[1]
 token1 = auth(username1)
 songs1 = makePlaylist(token1, username1)
 logoutUser()
 
-
+# Create playlist object for second profile
 username2 = sys.argv[2]
 token2 = auth(username2)
 songs2 = makePlaylist(token2, username2)
 logoutUser()
 
+# Create comparision object, object will containo all relevant information about 
+#   the similarity of the two profiles
 comparer = Comparer(songs1, songs2)
 
 print("########### Songs shared between both profiles ##############")
