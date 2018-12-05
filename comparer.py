@@ -2,7 +2,6 @@ from playlist import Playlist
 from statistics import Statistics
 
 class Comparer:
-    """Should call setSimilarity() immediately after creating Comparer object"""
 
     def __init__(self, playlist1, playlist2):
         self.playlist1 = playlist1
@@ -18,8 +17,8 @@ class Comparer:
     def setSimilarity(self):
         plen1 = len(self.playlist1.songs)
         plen2 = len(self.playlist2.songs)
-        sharedlen = len(self.comparison[1])
-        artistslen = len(self.comparison[2])
+        sharedlen = len(self.comparison[0].songs)
+        artistslen = self.comparison[2]
         similarity = self.calculator.similarityMetric(plen1, plen2, sharedlen, artistslen)
         return similarity
         

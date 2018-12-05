@@ -23,7 +23,7 @@ class Playlist:
                 return False
         return True
     
-    # != overload
+    # != oveload
     def __neq__(self,other):
         return not (self == other)
 
@@ -31,18 +31,19 @@ class Playlist:
     def add (self, song):
         self.songs.append(song)
 
-    #returns true if parameter in playlist, false otherwise
     def has(self, song):
+        """returns true if parameter in playlist, false otherwise"""
         if song in self.songs:
             return True
         return False 
     
-    #Param: other playlist to compare
-    #Returns: tuple (sharedSongs, sharedArtists, artistsCount) where
-    #   sharedSongs = playlist object containing songs in common
-    #   sharedArtists = set of all artists who have at least one song in both playlists
-    #   artistsCount = number pairs of songs (one song from each playlist) with the same artist
     def compare(self, other):
+        """ Param: other playlist to compare
+            Returns: tuple (sharedSongs, sharedArtists, artistsCount) of type (Playlist, Set, Int) where
+                sharedSongs = playlist object containing songs in common
+                sharedArtists = set of all artists who have at least one song in both playlists
+                artistsCount = number pairs of songs (one song from each playlist) with the same artist
+        """
         sharedSongs = Playlist("none",[])
         sharedArtists = set()
         artistsCount = 0

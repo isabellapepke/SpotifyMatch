@@ -10,6 +10,7 @@ from time import sleep
 import webbrowser
 from song import Song
 from playlist import Playlist
+from comparer import Comparer 
 
 #extra usernames and passwords:
 
@@ -91,9 +92,8 @@ def logoutUser():
     "Function logs out a user"
 
     print("\n\nNow logging you out...\n\n")
-    wait(5)
     webbrowser.open("http://www.spotify.com/logout")
-    wait(10)
+    wait(5)
 
 
 ###########----Main----############
@@ -119,7 +119,6 @@ token1 = auth(username1)
 songs1 = makePlaylist(token1, username1)
 print("########### Songs in Playlist 1 ##############")
 print(songs1)
-wait(5)
 logoutUser()
 
 
@@ -128,9 +127,32 @@ token2 = auth(username2)
 songs2 = makePlaylist(token2, username2)
 print("########### Songs in Playlist 2 ##############")
 print(songs2)
-wait(5)
 logoutUser()
 
+comparer = Comparer(songs1, songs2)
 
-printCommonTracks(songs1, songs2)
+print("########### Songs shared between both profiles ##############")
+comparer.printCommonSongs()
+
+print("########### Similarity Score for the two profiles ##############")
+print(f"{comparer.similarity*100} %")
+print("\n")
+
+if(comparer.similarity == 1):
+    print(f"The two profiles are identical!")
+
+elif (comparer.isSimilar(0.5)):
+    print(f"The two profiles are very similar, {username1}, you might like these songs from {username2}'s library:")
+    wait(5)
+    print("\n")
+    print(comparer.getMissingSongs(0))
+    print("\n")
+    print(f"{username2}, you might like these songs from {username1}'s library:")
+    print("\n")
+    wait(5)
+    print(comparer.getMissingSongs(1))
+
+else:
+    print("The two profiles are not very similar")
+
 print("******************************** --------------------  ********************************")
