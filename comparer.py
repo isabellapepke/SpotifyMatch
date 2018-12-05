@@ -3,7 +3,7 @@ from statistics import Statistics
 
 
 class Comparer:
-    
+
     def __init__(self, playlist1, playlist2):
         self.playlist1 = playlist1
         self.playlist2 = playlist2
@@ -25,18 +25,18 @@ class Comparer:
     def isSimilar(self, minSimilarity):
         return self.similarity >= minSimilarity
 
-    def getMissingSongs(self, profile = 0):
-        if profile == 0 :
+    def getMissingSongs(self, profile=0):
+        if profile == 0:
             missingSongs = Playlist("missing from User 1", [])
             for song in self.playlist2.songs:
                 if song in self.playlist1.songs:
                     continue
                 missingSongs.add(song)
             return missingSongs
-        
+
         missingSongs = Playlist("missing from User 2", [])
         for song in self.playlist1.songs:
             if song in self.playlist2.songs:
                 continue
             missingSongs.add(song)
-        return missingSongs  
+        return missingSongs 
