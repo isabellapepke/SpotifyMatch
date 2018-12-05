@@ -23,7 +23,7 @@ class Playlist:
                 return False
         return True
     
-    # != oveload
+    # != overload
     def __neq__(self,other):
         return not (self == other)
 
