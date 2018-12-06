@@ -1,3 +1,3 @@
 # Nic's Contributions
-- Code debuging and testing
+- Code debugging and testing
 - Created the poster

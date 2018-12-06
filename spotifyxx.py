@@ -10,7 +10,7 @@ from time import sleep
 import webbrowser
 from song import Song
 from playlist import Playlist
-from comparer import Comparer 
+from comparer import Comparer
 
 #extra usernames and passwords:
 
@@ -29,7 +29,7 @@ def deleteCache():
     "Function deletes cache, raises exception if does not execute"
 
     try:
-        os.remove(f,".cache-{user}")    
+        os.remove(f,".cache-{user}")
     except:
         print("There was an error when trying to delete cache. \nYou must manually delete it after everytime you run the code.")
 
@@ -101,13 +101,6 @@ def logoutUser():
 
 ###########----Main----############
 
-# Check for valid amount of command line arugments
-if len(sys.argv) < 2:
-    print("You must provide 2 Spotify Usernames as command-line arguments")
-    print("Now exiting program")
-    sys.exit()
-
-
 # when program starts logout any users, allow time for page to load
 webbrowser.open("http://www.spotify.com/logout")
 wait(5)
@@ -116,18 +109,22 @@ username1 = ""
 username2 = ""
 
 # Create playlist object for first profile
-username1 = sys.argv[1]
+username1 = input("Please enter first username:\n")
+while not username1:
+    username1 = input("Please enter valid username:\n")
 token1 = auth(username1)
 songs1 = makePlaylist(token1, username1)
 logoutUser()
 
 # Create playlist object for second profile
-username2 = sys.argv[2]
+username2 = input("Please enter second username:\n")
+while not username1:
+    username1 = input("Please enter valid username:\n")
 token2 = auth(username2)
 songs2 = makePlaylist(token2, username2)
 logoutUser()
 
-# Create comparision object, object will containo all relevant information about 
+# Create comparision object, object will containo all relevant information about
 #   the similarity of the two profiles
 comparer = Comparer(songs1, songs2)
 
