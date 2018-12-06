@@ -142,7 +142,7 @@ if(comparer.similarity == 1):
     print("The two profiles are identical!")
 
 elif (comparer.isSimilar(0.5)):
-    print(f"The two profiles are very similar, {}, you might like these songs from {}'s library:".format(username1, username2))
+    print("The two profiles are very similar, {}, you might like these songs from {}'s library:".format(username1, username2))
     wait(3)
     print("\n")
     print(comparer.getMissingSongs(0))
