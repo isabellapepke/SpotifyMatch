@@ -29,7 +29,7 @@ def deleteCache():
     "Function deletes cache, raises exception if does not execute"
 
     try:
-        os.remove(f,".cache-{user}")
+        os.remove(f,".cache-{user}")    
     except:
         print("There was an error when trying to delete cache. \nYou must manually delete it after everytime you run the code.")
 
@@ -135,19 +135,19 @@ print("########### Songs shared between both profiles ##############")
 comparer.printCommonSongs()
 
 print("########### Similarity Score for the two profiles ##############")
-print(f"{comparer.similarity*100} %")
+print("{} %".format(comparer.similarity*100))
 print("\n")
 
 if(comparer.similarity == 1):
-    print(f"The two profiles are identical!")
+    print("The two profiles are identical!")
 
 elif (comparer.isSimilar(0.5)):
-    print(f"The two profiles are very similar, {username1}, you might like these songs from {username2}'s library:")
+    print(f"The two profiles are very similar, {}, you might like these songs from {}'s library:".format(username1, username2))
     wait(3)
     print("\n")
     print(comparer.getMissingSongs(0))
     print("\n")
-    print(f"{username2}, you might like these songs from {username1}'s library:")
+    print("{}, you might like these songs from {}'s library:".format(username2, username1))
     print("\n")
     wait(3)
     print(comparer.getMissingSongs(1))
