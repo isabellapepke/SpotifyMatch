@@ -24,7 +24,9 @@ docker container run --rm -it --name spot spotidock
 2. Visit this Webpage to log in to your account https://accounts.spotify.com/authorize?client_id=4814686cacd44e65ab9561e8744726ee&response_type=code&redirect_uri=http%3A%2F%2Flocalhost%3A%2Fcallback&scope=user-library-read+user-read-email+user-read-private
 3. Copy URL you were redirected to into the command line (Don't worry about the 404 error)
 4. Visit https://www.spotify.com/logout to log out of the first account before entering second username.
-5. Repeat steps 2-4
+5. Clear browser history.
+6. Enter second username.
+7. Repeat steps 2-5
 
 ## How to find your username
 ### Via Spotify.com
